@@ -1,0 +1,102 @@
+create database if not exists magazin
+ default character set utf8 
+ default collate utf8_general_ci;
+
+use magazin;
+
+-- ----------------------------------------------------------------------
+
+drop table if exists telefoane;
+create table telefoane (
+    id bigint auto_increment primary key,
+    brand varchar(20) not null default 'fara_brand',
+    model varchar(20) not null default 'fara_model',
+    ecran varchar(20) not null default 'fara_ecran',
+    mem_interna int not null default '0',
+    mem_ram int not null default '0'
+);
+
+insert into telefoane (brand, model, ecran, mem_interna, mem_ram) values
+('Samsung','Galaxy A54','Super AMOLED',128,8),
+('Apple','IPhone SE3','LCD',128,4),
+('Motorola','Edge 30 Ultra','P-OLED',256,12),
+('OPPO','Reno8','AMOLED',256,8),
+('Huawei ','P60 Pro','LTPO',256,8);
+
+-- ----------------------------------------------------------------------
+
+drop table if exists calculatoare;
+create table calculatoare (
+    id bigint auto_increment primary key,
+    brand varchar(20) not null default 'fara_brand',
+    placa_video varchar(30) not null default 'fara_placa_video',
+    tip_procesor varchar(30) not null default 'fara_tip_procesor',
+    tip_stocare varchar(20) not null default 'fara_tip_stocare',
+    mem_ram int not null default '0'
+);
+
+insert into calculatoare (brand, placa_video, tip_procesor, tip_stocare, mem_ram) values
+('DELL','Intel HD Graphics 530','Intel i5-6500T','256GB SSD',8),
+('Lenovo','Intel UHD Graphics','Intel i3-1115G4','512GB SSD',8),
+('ASUS','Intel UHD 730','Intel i3-12100','512GB SSD',8),
+('HP','	Intel UHD Graphics 730','Intel i5-12400T','512GB SSD',8),
+('MYPC','GTX 1650','Intel i5-10400F','512GB SSD',16);
+
+-- ----------------------------------------------------------------------
+
+drop table if exists laptopuri;
+create table laptopuri (
+    id bigint auto_increment primary key,
+    brand varchar(20) not null default 'fara_brand',
+    placa_video varchar(30) not null default 'fara_placa_video',
+    tip_procesor varchar(30) not null default 'fara_tip_procesor',
+    ecran varchar(20) not null default 'fara_ecran',
+    autonomie_baterie int not null default '0'
+);
+
+insert into laptopuri (brand, placa_video, tip_procesor, ecran, autonomie_baterie) values
+('Acer','Intel HD Graphics 530','Intel i5-6500T','LED',6),
+('Lenovo','Intel UHD Graphics','Intel i3-1115G4','OLED',12),
+('ASUS','Intel UHD 730','Intel i3-12100','IPS',4),
+('HP','	Intel UHD Graphics 730','Intel i5-12400T','OLED',10),
+('Dell','GTX 1650','Intel i5-10400F','Retina',8);
+
+-- ----------------------------------------------------------------------
+
+drop table if exists televizoare;
+create table televizoare (
+    id bigint auto_increment primary key,
+    brand varchar(20) not null default 'fara_brand',
+    clar_imag varchar(20) not null default 'fara_clar_imag',
+    clasa_energ varchar(20) not null default 'fara_clasa_energ',
+    ecran varchar(20) not null default 'fara_ecran',
+    dim_diagonala int not null default '0'
+);
+
+insert into televizoare (brand, clar_imag, clasa_energ, ecran, dim_diagonala) values
+('Philips','4K','Clasa C','LED',108),
+('Sony','8K','Clasa A','OLED',127),
+('TCL','HD','Clasa A','QLED',153),
+('Allview','Full HD','Clasa B','OLED',111),
+('Panasonic','HD','Clasa D','QNED',82);
+
+-- ----------------------------------------------------------------------
+
+drop table if exists tablete;
+create table tablete (
+    id bigint auto_increment primary key,
+    brand varchar(20) not null default 'fara_brand',
+    rezolutie varchar(20) not null default 'fara_rezolutie',
+    dim_diagonala int not null default '0',
+    mem_interna int not null default '0',
+    mem_ram int not null default '0'
+);
+
+insert into tablete (brand, rezolutie, dim_diagonala, mem_interna, mem_ram) values
+('Lenovo','1920x1200',9,128,8),
+('Xiaomi','1280x800',8,128,4),
+('Blackview','2880x1920',12,256,12),
+('Allview','2000x1200',10,256,8),
+('Toshiba ','2388x1668',11,256,8);
+
+-- ----------------------------------------------------------------------
